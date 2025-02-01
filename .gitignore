@@ -1,0 +1,13 @@
+/.build
+/.build.ssgc
+/.build.unidoc
+/.ssgc
+/.vscode
+
+/KrabbyPatty*/
+
+/*.artifactbundle
+/*.artifactbundle.zip
+
+/Packages/
+/Package.resolved
