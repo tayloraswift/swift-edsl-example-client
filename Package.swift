@@ -14,16 +14,16 @@ let kkChecksum:String
 switch kkPlatform
 {
 case "Ubuntu-24.04-X64":
-    kkChecksum = "9c97bd6fe86c08294b57ae916f8511f31be7052db39e412af1694479cb4317bf"
+    kkChecksum = "ff0a948cb110ae402e152ca3461570ef909d44c29cbeef2411a11de7b8805d9b"
 
 case "Ubuntu-22.04-X64":
-    kkChecksum = "750ae1cf47ab2c46e45e67746eb73a517ea43b48d009eaf33a7068842589c8e3"
+    kkChecksum = "f9cd285801b84c935c512be3879c440dedfeb191882a72c247a17dae147557fa"
 
 case "Amazon-Linux-2-X64":
-    kkChecksum = "41291f0560da794c27df18bbaf217a74305596865bb9128182d0f1156d90cf5f"
+    kkChecksum = "ca40ccb4a349f76aa5f4a5b4de97493fe65f94b9e67973e543ea1365c796173a"
 
 case "macOS-ARM64":
-    kkChecksum = "8d367df3ea61e1213e1d15499118d5ceb408610ef62101d290193d86c868e958"
+    kkChecksum = "8079612425e3b8f550207226cbc7fac51818b9010982e7134ab2be068dcee61a"
 
 default:
     fatalError("Unsupported platform: \(kkPlatform)")
@@ -41,7 +41,7 @@ let package:Package = .init(name: "swift-rlp-example-client",
             name: "KrabbyPatty",
             url: """
             https://download.swiftinit.org/swift-rlp-example/\
-            2.0.0/\(kkPlatform)/main.artifactbundle.zip
+            3.0.0/\(kkPlatform)/main.artifactbundle.zip
             """,
             checksum: kkChecksum),
 
