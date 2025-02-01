@@ -18,12 +18,13 @@ export SWIFTPM_KK_PLATFORM="macOS-ARM64"
 export SWIFTPM_KK_PLATFORM="Ubuntu-24.04-X64"
 
 # Use modified SwiftPM to build
-../swift-package-manager/.build/release/swift-build -c release
+../swift-package-manager/.build/release/swift-build -c release \
+    -Xlinker -rpath \
+    -Xlinker main.artifactbundle/KrabbyPatty
 
 # Download Version 4 of `libKrabbyPatty` and set the library path
 curl https://download.swiftinit.org/swift-rlp-example/4.0.0/$SWIFTPM_KK_PLATFORM/main.artifactbundle.zip -o main.artifactbundle.zip
 unzip main.artifactbundle.zip
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$PWD/main.artifactbundle/KrabbyPatty/
 
 # Run the executable
 .build/release/KrustyKrab
@@ -32,5 +33,5 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$PWD/main.artifactbundle/KrabbyPatty/
 You should see the following output:
 
 ```
-Latest Krabby Patty formula version: v3
+Latest Krabby Patty formula version: v4
 ```

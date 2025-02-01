@@ -14,7 +14,7 @@ let kkChecksum:String
 switch kkPlatform
 {
 case "Ubuntu-24.04-X64":
-    kkChecksum = "ff0a948cb110ae402e152ca3461570ef909d44c29cbeef2411a11de7b8805d9b"
+    kkChecksum = "3e74feb8fbd407274d1bfdb147b930bce2a34057f7b49d68e292b31af4c83308"
 
 case "Ubuntu-22.04-X64":
     kkChecksum = "f9cd285801b84c935c512be3879c440dedfeb191882a72c247a17dae147557fa"
