@@ -17,12 +17,12 @@ export SWIFTPM_KK_PLATFORM="macOS-ARM64"
 # Tell SwiftPM that we are on Ubuntu 24.04. This is defined by `libKrabbyPatty`, not SwiftPM.
 export SWIFTPM_KK_PLATFORM="Ubuntu-24.04-X64"
 
-# Use modified SwiftPM to build
+# Use modified SwiftPM to build, setting @rpath to where you expect to deploy `libKrabbyPatty`
 ../swift-package-manager/.build/release/swift-build -c release \
     -Xlinker -rpath \
     -Xlinker main.artifactbundle/KrabbyPatty
 
-# Download Version 4 of `libKrabbyPatty` and set the library path
+# Download Version 4 of `libKrabbyPatty` and unpack it to the expected location
 curl https://download.swiftinit.org/swift-rlp-example/4.0.0/$SWIFTPM_KK_PLATFORM/main.artifactbundle.zip -o main.artifactbundle.zip
 unzip main.artifactbundle.zip
 
