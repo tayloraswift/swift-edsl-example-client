@@ -33,5 +33,17 @@ unzip main.artifactbundle.zip
 You should see the following output:
 
 ```
+Latest Krabby Patty formula version: v3
+```
+
+This is because SwiftPM copies the version of `libKrabbyPatty` that it was built against into the `.build` directory. To use the library installed at the `@rpath` you configured, delete that copy:
+
+```bash
+rm .build/release/libKrabbyPatty.so
+```
+
+You should see the following output:
+
+```
 Latest Krabby Patty formula version: v4
 ```
