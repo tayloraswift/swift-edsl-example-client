@@ -1,6 +1,6 @@
 Example project for using Swift with dynamic library dependencies on Linux.
 
-This project builds the `KrustyKrab` executable against version 3.0.0 of [libKrabbyPatty](https://github.com/tayloraswift/swift-rlp-example), and should be compatible future versions of the same library.
+This project builds the `KrustyKrab` executable against version 1.0.0 of [libKrabbyPatty](https://github.com/tayloraswift/swift-edsl-example), and should be compatible future versions of the same library.
 
 **SwiftPM does not understand all the various Linux distributions that exist in the world**. Therefore, you must set the `SWIFTPM_KK_PLATFORM` environment variable to one of the following, in order to build against the correct binary artifact:
 
@@ -22,8 +22,8 @@ export SWIFTPM_KK_PLATFORM="Ubuntu-24.04-X64"
     -Xlinker -rpath \
     -Xlinker main.artifactbundle/KrabbyPatty
 
-# Download Version 4 of `libKrabbyPatty` and unpack it to the expected location
-curl https://download.swiftinit.org/swift-rlp-example/4.0.0/$SWIFTPM_KK_PLATFORM/main.artifactbundle.zip -o main.artifactbundle.zip
+# Download Version 2 of `libKrabbyPatty` and unpack it to the expected location
+curl https://download.swiftinit.org/swift-edsl-example/2.0.0/$SWIFTPM_KK_PLATFORM/main.artifactbundle.zip -o main.artifactbundle.zip
 unzip main.artifactbundle.zip
 
 # Run the executable
@@ -33,7 +33,7 @@ unzip main.artifactbundle.zip
 You should see the following output:
 
 ```
-Latest Krabby Patty formula version: v3
+Latest Krabby Patty formula version: v1
 ```
 
 This is because SwiftPM copies the version of `libKrabbyPatty` that it was built against into the `.build` directory. To use the library installed at the `@rpath` you configured, delete that copy:
@@ -45,5 +45,5 @@ rm .build/release/libKrabbyPatty.so
 You should see the following output:
 
 ```
-Latest Krabby Patty formula version: v4
+Latest Krabby Patty formula version: v2
 ```
