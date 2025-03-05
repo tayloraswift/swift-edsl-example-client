@@ -188,7 +188,7 @@ To get the most out of an EDSL, you should compile the client application with a
 The command below builds the `KrustyKrab` executable against version 1.0.0 of `libKrabbyPatty`, and embeds an `@rpath` that points to some directory named `Libraries`.
 
 ```bash
-swift build -c release --target KrustyKrab \
+swift build -c release --product KrustyKrab \
     -Xlinker -rpath \
     -Xlinker Libraries
 ```
@@ -248,4 +248,3 @@ rm .build/release/libKrabbyPatty.so
 ```
 Latest Krabby Patty formula version: v2
 ```
-
